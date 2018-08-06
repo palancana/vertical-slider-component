@@ -1,8 +1,15 @@
 <html>
-    <header>
-    </header>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
     <body>
-        <h1>Hello Janira</h1>
-        <h2>By: Rafa</h2>
+    <div class="slidecontainer">
+        <output class="upper-text">50</output>
+        <output class="lower-text">50</output>
+        <input class="slider" type="range" id="rangeinput" value="50" onmousemove="rangevalue.value=value; upperrange.value=value-rangevalue.value"/>
+        <span class="highlight"></span>
+        <output id="rangevalue">50</output>
+
+    </div>
     </body>
 </html>
