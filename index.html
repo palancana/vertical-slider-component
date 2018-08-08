@@ -7,10 +7,11 @@
             document.getElementById("lowerValue").innerHTML = lower;
             document.getElementById("upperValue").innerHTML = upper;
 
-            var val = ((- 300) - (300/230) * ((230 - rangevalue.value) / 2));
+            var val1 = ((300/230) * ((230 - rangevalue.value) / 2));
+            var val2 = 300 - ((300/230) * (rangevalue.value / 2));
 
-            upperValue.style.setProperty('margin-top', val + 'px')
-            //lowerValue.style.setProperty('margin-top', (75) + 'px')
+            upperValue.style.setProperty('margin-top', val1 + 'px')
+            lowerValue.style.setProperty('margin-top', val2 + 'px')
         }
         
         // document.getElementById("rangeinput").onchange = function {
