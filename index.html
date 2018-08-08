@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 
+<div class="slidecontainer">
+    <p id="upperValue" class="upper-text"></p>
+    <p id="lowerValue" class="lower-text"></p>
+    <p class="upper-date">15/08/18</p>
+    <p class="lower-date">24/09/18</p>
+    <div id="circle"></div>
+  <input type="range" min="0" max="230" value="115" class="slider" id="myRange">
+</div>
 
-        window.onmousemove = function() {
-            var initValue = 230;
-            var lower = rangevalue.value;
-            var upper = initValue - lower;
-            document.getElementById("lowerValue").innerHTML = lower;
-            document.getElementById("upperValue").innerHTML = upper;
+<script>
 
-            var val1 = ((300/230) * ((230 - rangevalue.value) / 2));
-            var val2 = 300 - ((300/230) * (rangevalue.value / 2));
+// Init values and vars
+const initValue = 230;
+const size = 300;
+const proportion = (size/initValue);
+const circleSize = (size - (30/2));
 
-            upperValue.style.setProperty('margin-top', val1 + 'px')
-            lowerValue.style.setProperty('margin-top', val2 + 'px')
+var slider = document.getElementById("myRange");
+var upper = document.getElementById("upperValue");
+var lower = document.getElementById("lowerValue");
+var circle = document.getElementById("circle");
 
-            document.getElementById("circle").innerHTML = circle;
-            val3 = 285 - ((300/230) * (rangevalue.value));
-            circle.style.setProperty('margin-top', val3);
-        }
-        
-        // document.getElementById("rangeinput").onchange = function {
-        //     console.log("yass");
-        // }
-    </script>
-    </head>
-    <body>
-    <div class="slidecontainer">
-        <p class="upper-text" id="upperValue"></p>
-        <p class="lower-text" id="lowerValue"></p>
-        <div id="circle"></div>
-        <input class="slider" type="range" id="myRange" value="115" min="0" max="230" onmousemove="rangevalue.value=value;"/>
-        <span class="highlight"></span>
-        <output id="rangevalue">50</output>
+var upperValueMargin = 0;
+var lowerValueMargin = 0;
 
-    </div>
-    </body>
+lower.innerHTML = slider.value;
+upper.innerHTML = slider.value;
+
+// Every moment of the slider produces changes
+slider.oninput = function() {
+
+  // Changes on values
+  lower.innerHTML = this.value;
+  upper.innerHTML = initValue - this.value;
+
+  // Calc changes on styles
+  upperValueMargin = ((proportion * ((initValue - slider.value) / 2)) - 24);
+  lowerValueMargin = ((size - (proportion * (slider.value / 2))) - 24);
+  circleMargin = (circleSize - (proportion * (slider.value)));
+
+  // Apply changes on styles
+  upperValue.style.setProperty('margin-top', upperValueMargin + 'px')
+  lowerValue.style.setProperty('margin-top', lowerValueMargin + 'px')
+  circle.style.setProperty('margin-top', circleMargin + 'px');
+
+}
+</script>
+
+</body>
 </html>
