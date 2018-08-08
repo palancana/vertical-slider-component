@@ -12,6 +12,10 @@
 
             upperValue.style.setProperty('margin-top', val1 + 'px')
             lowerValue.style.setProperty('margin-top', val2 + 'px')
+
+            document.getElementById("circle").innerHTML = circle;
+            val3 = 285 - ((300/230) * (rangevalue.value));
+            circle.style.setProperty('margin-top', val3);
         }
         
         // document.getElementById("rangeinput").onchange = function {
@@ -25,6 +29,7 @@
     <div class="slidecontainer">
         <p class="upper-text" id="upperValue"></p>
         <p class="lower-text" id="lowerValue"></p>
+        <div id="circle"></div>
         <input class="slider" type="range" id="rangeinput" value="115" min="0" max="230"onmousemove="rangevalue.value=value;"/>
         <span class="highlight"></span>
         <output id="rangevalue">50</output>

@@ -28,13 +28,27 @@
     color: white;
     position: absolute;
     margin: 75px 0px 0px 150px;
-    
+    background: none;
 }
 
 .lower-text {
     color: white;
     position: absolute;
     margin: 225px 0px 0px 150px;
+    background: none;
+}
+
+#circle {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    color: transparent;
+    background: red;
+    margin: 150px 0px 0px 135px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    /* Cleaner, but slightly less support: use "50%" as value */
 }
 
 /* .slider:hover {
