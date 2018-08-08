@@ -1,5 +1,10 @@
+<!DOCTYPE html>
 <html>
-    <script>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+
+
         window.onmousemove = function() {
             var initValue = 230;
             var lower = rangevalue.value;
@@ -22,15 +27,13 @@
         //     console.log("yass");
         // }
     </script>
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
     <div class="slidecontainer">
         <p class="upper-text" id="upperValue"></p>
         <p class="lower-text" id="lowerValue"></p>
         <div id="circle"></div>
-        <input class="slider" type="range" id="rangeinput" value="115" min="0" max="230"onmousemove="rangevalue.value=value;"/>
+        <input class="slider" type="range" id="myRange" value="115" min="0" max="230" onmousemove="rangevalue.value=value;"/>
         <span class="highlight"></span>
         <output id="rangevalue">50</output>
 

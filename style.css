@@ -4,9 +4,15 @@
 
   .slidecontainer {
     height: 300px;
-    width: 300px;
+    width: 382px;
     background: #d3d3d3;
     border-radius: 50px;
+    /* Sketch styles */
+    /* Mask: */
+    background: #FFF8F6;
+    border-radius: 9.74px;
+    /* Bitmap Copy: */
+    transform: rotate(67deg);
 } 
 
 /* Background */
@@ -14,7 +20,7 @@
     transform-origin: 75px 75px;
     transform: rotate(-90deg);
     width: 300px;
-    height: 300px;
+    height: 382px;
     margin: 150px 0px 0px 0px;
     -webkit-appearance: none;
     background: none;
@@ -27,14 +33,14 @@
 .upper-text {
     color: white;
     position: absolute;
-    margin: 75px 0px 0px 150px;
+    margin: 75px 0px 0px 191px;
     background: none;
 }
 
 .lower-text {
     color: white;
     position: absolute;
-    margin: 225px 0px 0px 150px;
+    margin: 225px 0px 0px 191px;
     background: none;
 }
 
@@ -44,7 +50,8 @@
     position: absolute;
     color: transparent;
     background: red;
-    margin: 150px 0px 0px 135px;
+    margin-left: 382px;
+    margin-top: 135px;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
@@ -60,7 +67,7 @@
     -webkit-appearance: none;
     appearance: none;
     width: 10px;
-    height: 300px;
+    height: 382px;
     background: red;
     cursor: pointer;
 }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="slidecontainer">
+    <p id="upperValue" class="upper-text"></p>
+    <p id="lowerValue" class="lower-text"></p>
+    <div id="circle"></div>
+  <input type="range" min="0" max="230" value="115" class="slider" id="myRange">
+</div>
+
+<script>
+
+// Init values and vars
+const initValue = 230;
+const size = 300;
+const proportion = (size/initValue);
+const circleSize = (size - (30/2));
+
+var slider = document.getElementById("myRange");
+var upper = document.getElementById("upperValue");
+var lower = document.getElementById("lowerValue");
+var circle = document.getElementById("circle");
+
+var upperValueMargin = 0;
+var lowerValueMargin = 0;
+
+lower.innerHTML = slider.value;
+upper.innerHTML = slider.value;
+
+// Every moment of the slider produces changes
+slider.oninput = function() {
+
+  // Changes on values
+  lower.innerHTML = this.value;
+  upper.innerHTML = initValue - this.value;
+
+  // Calc changes on styles
+  upperValueMargin = (proportion * ((initValue - slider.value) / 2));
+  lowerValueMargin = (size - (proportion * (slider.value / 2)));
+  circleMargin = (circleSize - (proportion * (slider.value)));
+
+  // Apply changes on styles
+  upperValue.style.setProperty('margin-top', upperValueMargin + 'px')
+  lowerValue.style.setProperty('margin-top', lowerValueMargin + 'px')
+  circle.style.setProperty('margin-top', circleMargin + 'px');
+
+}
+</script>
+
+</body>
+</html>
