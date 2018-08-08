@@ -1,18 +1,23 @@
 * {
-    background-color: blue;
+    height: 100%;
+    background-image: linear-gradient(-136deg, #FEE098 0%, #E6847E 100%);
+    background-repeat: no-repeat;
 }
 
-  .slidecontainer {
+.body {
+    padding-top: 300px;
+}
+
+.slidecontainer {
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
     height: 300px;
     width: 382px;
-    background: #d3d3d3;
-    border-radius: 50px;
     /* Sketch styles */
-    /* Mask: */
-    background: #FFF8F6;
     border-radius: 9.74px;
-    /* Bitmap Copy: */
-    transform: rotate(67deg);
+    background-image: url('img/background@3x.png');
+    background-size: 382px 300px;
 } 
 
 /* Background */
@@ -20,7 +25,7 @@
     transform-origin: 75px 75px;
     transform: rotate(-90deg);
     width: 300px;
-    height: 382px;
+    height: 385px;
     margin: 150px 0px 0px 0px;
     -webkit-appearance: none;
     background: none;
@@ -28,34 +33,66 @@
     opacity: 1;
     -webkit-transition: .2s;
     transition: opacity .9s;
+    
+}
+
+.upper-date {
+    position: absolute;
+    padding-left: 15px;
+    background: transparent;
+    font-family: Montserrat-Medium;
+    font-size: 19.48px;
+    color: #212020;
+    letter-spacing: 0;
+}
+
+.lower-date {
+    position: absolute;
+    padding-left: 15px;
+    padding-top: 240px;
+    background: transparent;
+    font-family: Montserrat-Medium;
+    font-size: 19.48px;
+    color: #212020;
+    letter-spacing: 0;
 }
 
 .upper-text {
-    color: white;
+    color: red;
     position: absolute;
-    margin: 75px 0px 0px 191px;
+    margin: 52px 0px 0px 160px;
     background: none;
+    font-family: Montserrat-Bold;
+    font-size: 46.75px;
+    color: #2B0053;
+    letter-spacing: 0;
 }
 
 .lower-text {
-    color: white;
+    color: red;
     position: absolute;
-    margin: 225px 0px 0px 191px;
+    margin: 202px 0px 0px 160px;
     background: none;
+    font-family: Montserrat-Bold;
+    font-size: 46.75px;
+    color: #2B0053;
+    letter-spacing: 0;
 }
 
 #circle {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     position: absolute;
     color: transparent;
-    background: red;
-    margin-left: 382px;
-    margin-top: 135px;
+    margin-left: 365px;
+    background: transparent;
+    margin-top: 134px;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     border-radius: 50px;
-    /* Cleaner, but slightly less support: use "50%" as value */
+    background-image: url('img/circle@3x.png');
+    background-size: 34px 34px;
+    z-index: 1;
 }
 
 /* .slider:hover {
@@ -66,11 +103,13 @@
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 10px;
-    height: 382px;
-    background: red;
+    width: 6px;
+    height: 377px;
+    background: #65C7C2;
     cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 }
+
 
 /* .slider::-moz-range-thumb {
     width: 100px;

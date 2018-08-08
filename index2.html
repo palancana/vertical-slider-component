@@ -9,6 +9,8 @@
 <div class="slidecontainer">
     <p id="upperValue" class="upper-text"></p>
     <p id="lowerValue" class="lower-text"></p>
+    <p class="upper-date">15/08/18</p>
+    <p class="lower-date">24/09/18</p>
     <div id="circle"></div>
   <input type="range" min="0" max="230" value="115" class="slider" id="myRange">
 </div>
@@ -40,8 +42,8 @@ slider.oninput = function() {
   upper.innerHTML = initValue - this.value;
 
   // Calc changes on styles
-  upperValueMargin = (proportion * ((initValue - slider.value) / 2));
-  lowerValueMargin = (size - (proportion * (slider.value / 2)));
+  upperValueMargin = ((proportion * ((initValue - slider.value) / 2)) - 24);
+  lowerValueMargin = ((size - (proportion * (slider.value / 2))) - 24);
   circleMargin = (circleSize - (proportion * (slider.value)));
 
   // Apply changes on styles
