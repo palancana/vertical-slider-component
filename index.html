@@ -10,7 +10,7 @@
     <p id="upperValue" class="upper-text"></p>
     <p id="lowerValue" class="lower-text"></p>
     <p class="upper-date">15/08/18</p>
-    <p class="lower-date">24/09/18</p>
+    <p class="lower-date" id="date">24/09/18</p>
     <div id="circle"></div>
   <input type="range" min="0" max="230" value="115" class="slider" id="myRange">
 </div>
@@ -27,6 +27,7 @@ var slider = document.getElementById("myRange");
 var upper = document.getElementById("upperValue");
 var lower = document.getElementById("lowerValue");
 var circle = document.getElementById("circle");
+var date = document.getElementById("date");
 
 var upperValueMargin = 0;
 var lowerValueMargin = 0;
@@ -45,12 +46,13 @@ slider.oninput = function() {
   upperValueMargin = ((proportion * ((initValue - slider.value) / 2)) - 24);
   lowerValueMargin = ((size - (proportion * (slider.value / 2))) - 24);
   circleMargin = (circleSize - (proportion * (slider.value)));
+  lowerDateMargin = circleMargin + 16;
 
   // Apply changes on styles
-  upperValue.style.setProperty('margin-top', upperValueMargin + 'px')
-  lowerValue.style.setProperty('margin-top', lowerValueMargin + 'px')
+  upperValue.style.setProperty('margin-top', upperValueMargin + 'px');
+  lowerValue.style.setProperty('margin-top', lowerValueMargin + 'px');
   circle.style.setProperty('margin-top', circleMargin + 'px');
-
+  date.style.setProperty('padding-top', lowerDateMargin + 'px');
 }
 </script>
 
